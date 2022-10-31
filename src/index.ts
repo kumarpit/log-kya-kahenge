@@ -1,6 +1,6 @@
 import { Logging } from "./utils/LogManager";
 
-const log = Logging.configure({ prod: false }).getLogger();
+const log = Logging.getLogger();
 
 Logging.registerConsoleLogger();
 

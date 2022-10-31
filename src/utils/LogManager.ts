@@ -4,8 +4,7 @@ import { Logger } from "./Logger";
 
 export class LogManager extends EventEmitter {
     private options: LogOptions = {
-        minLevel: '_ALL',
-        prod: true
+        minLevel: '_ALL'
     }
 
     private isRegistered: boolean = false;
@@ -27,7 +26,7 @@ export class LogManager extends EventEmitter {
         if (this.isRegistered) return this;
 
         this.onLogEntry((logEntry) => {
-            const msg = `[${logEntry.level}] ${logEntry.location? logEntry.location : ''} ${logEntry.message}`;
+            const msg = `[${logEntry.level}] ${logEntry.location? logEntry.location : ''} \n ${logEntry.message}`;
             switch (logEntry.level) {
                 case 'TRACE':
                     console.trace(msg);

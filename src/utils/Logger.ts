@@ -16,7 +16,7 @@ export class Logger {
         return LEVELS[minLevel];
     }
 
-    public log(logLevel: LogLevel, message: string): void {
+    public log(logLevel: LogLevel, message: any): void {
         const level = this.levelToInt(logLevel);
         if (level < this.minLevel) return;
 
@@ -37,9 +37,9 @@ export class Logger {
         this.logManager.emit('log', logEntry);
     }
 
-    public trace(message: string): void { this.log('TRACE', message); }
-    public debug(message: string): void { this.log('DEBUG', message); }
-    public info(message: string): void  { this.log('INFO', message); }
-    public warn(message: string): void  { this.log('WARN', message); }
-    public error(message: string): void { this.log('ERROR', message); }
+    public trace(message: any): void { this.log('TRACE', message); }
+    public debug(message: any): void { this.log('DEBUG', message); }
+    public info(message: any): void  { this.log('INFO', message); }
+    public warn(message: any): void  { this.log('WARN', message); }
+    public error(message: any): void { this.log('ERROR', message); }
 }

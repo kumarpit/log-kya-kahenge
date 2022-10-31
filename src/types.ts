@@ -1,17 +1,15 @@
 export interface LogEntry {
     level: LogLevel;
     location?: string;
-    message: string;
+    message: any;
 }
   
 export interface LogOptions {
-    minLevel: LogLevelConfig,
-    prod: boolean
+    minLevel: LogLevelConfig
 }
 
 export interface LogOptionsConfig {
-    minLevel?: LogLevel,
-    prod?: boolean
+    minLevel?: LogLevel
 }
 
 export const LEVELS = {
