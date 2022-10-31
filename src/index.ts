@@ -1,9 +1,11 @@
 import { Logging } from "./utils/LogManager";
-import { LogEntry } from "./types";
+
+const log = Logging.configure({ prod: false }).getLogger();
 
 Logging.registerConsoleLogger();
 
-const logger = Logging.getLogger();
+function testLogging() {
+    log.error("test logging message")
+}
 
-logger.error("test logging message")
-console.warn("test")
+testLogging();
