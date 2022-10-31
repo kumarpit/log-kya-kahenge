@@ -1,0 +1,1 @@
+based on [this](https://adrianhall.github.io/cloud/2019/06/30/building-an-efficient-logger-in-typescript/) article
